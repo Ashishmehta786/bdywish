@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #240046; /* Dark background color */
+  background-image: linear-gradient(to bottom right, #5c0082, #9d0191); /* Brinjal toned gradient */
+  color: #fff; /* Text color set to white */
+  overflow: hidden; /* Hide the overflow to avoid scrollbars */
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  color:#E4E2E5 ;
+}
+
+.birthdayWish {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Animation for cakes */
+@keyframes cakeAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.cake-container {
+  position: relative;
+  height: 150px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.cake {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-image: url('cake.png'); /* Replace with the correct path to your cake image */
+  background-size: contain;
+  animation: cakeAnimation 10s linear infinite;
+}
