@@ -3,10 +3,8 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #240046; /* Dark background color */
-  background-image: linear-gradient(to bottom right, #5c0082, #9d0191); /* Brinjal toned gradient */
+  background-color: #141416; /* Dark background color */
   color: #fff; /* Text color set to white */
-  overflow: hidden; /* Hide the overflow to avoid scrollbars */
 }
 
 .container {
@@ -14,10 +12,13 @@ body {
   margin: 50px auto;
   padding: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: relative; /* Add position relative to .container */
+  z-index: 1; /* Set z-index to bring the .container to the foreground */
+  overflow: hidden; /* Hide the overflow to avoid scrollbars */
 }
 
 h1 {
-  color:#E4E2E5 ;
+  color: #E4E2E5;
 }
 
 .birthdayWish {
@@ -26,28 +27,23 @@ h1 {
 }
 
 /* Animation for cakes */
-@keyframes cakeAnimation {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
 .cake-container {
-  position: relative;
-  height: 150px; /* Adjust the height as needed */
-  overflow: hidden;
+  position: absolute;
+  top: -100px; /* Start slightly above the top */
+  left: -100px; /* Start slightly outside the left */
+  width: calc(100% + 200px); /* Extend width to cover the entire container */
+  height: calc(100% + 200px); /* Extend height to cover the entire container */
+  z-index: 0; /* Set z-index to send the .cake-container to the background */
 }
 
 .cake {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
+  top: 0; /* Start at the top */
+  right: 0; /* Start at the right */
+  width: 100px; /* Image size remains at the original 100px */
+  height: 100px; /* Image size remains at the original 100px */
   background-image: url('cake.png'); /* Replace with the correct path to your cake image */
-  background-size: contain;
+  background-size: cover; /* Use cover to maintain aspect ratio */
   animation: cakeAnimation 10s linear infinite;
 }
